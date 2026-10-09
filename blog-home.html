@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 기본 메타 태그 -->
+    <title>마사지 매거진 & 힐링 정보 | 지금출장마사지 공식 블로그</title>
+    <meta name="description" content="지금출장마사지가 전하는 홈케어 힐링 팁, 스웨디시·아로마 효능, 피로 회복 건강 가이드 및 유용한 출장마사지 이용 꿀팁을 확인해 보세요.">
+    <meta name="keywords" content="지금출장마사지 매거진, 마사지 블로그, 스웨디시 효능, 홈타이 팁, 피로회복 가이드">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nowmassage24.com/blog-home.html">
+
+    <!-- 파비콘 및 애플 터치 아이콘 설정 -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta name="theme-color" content="#0b0f19">
+
+    <!-- Schema.org 구조화 데이터 (Blog) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "지금출장마사지 매거진",
+      "description": "건강, 피로 회복, 마사지 테라피 관련 전문 정보 블로그",
+      "url": "https://nowmassage24.com/blog-home.html"
+    }
+    </script>
+
+    <!-- 스타일시트 (다크 럭셔리 + 블로그 카드 레이아웃) -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #151c2c;
+            --bg-card-hover: #1e293b;
+            --bg-nav: #0f172a;
+            --accent-gold: #f59e0b;
+            --accent-gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+            --telegram-color: #0088cc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding-bottom: 70px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 헤더 & 네비게이션 */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-gold);
+        }
+
+        .btn-tg {
+            background-color: var(--telegram-color);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 페이지 헤더 */
+        .page-header {
+            padding: 80px 0 50px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1e293b 0%, var(--bg-main) 70%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header h1 span {
+            color: var(--accent-gold);
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto;
+            word-break: keep-all;
+        }
+
+        /* 섹션 공통 */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* 블로그 카드 그리드 스타일 */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .blog-thumb {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            filter: brightness(0.9);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .blog-date {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .blog-card h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+
+        .blog-card p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+
+        .read-more {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.2s;
+        }
+
+        .blog-card:hover .read-more {
+            gap: 8px;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: var(--bg-nav);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav a {
+            color: var(--text-main);
+        }
+
+        .footer-info {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        /* 모바일 스티키 하단 CTA */
+        .mobile-sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: rgba(15, 23, 42, 0.98);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            z-index: 2000;
+        }
+
+        .mobile-cta-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        .mobile-cta-btn.tg {
+            background-color: var(--telegram-color);
+        }
+
+        /* 반응형 미디어쿼리 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">지금출장마사지</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">브랜드소개</a></li>
+                <li><a href="pricing.html">코스 & 가격</a></li>
+                <li><a href="index.html#regions">지역별 안내</a></li>
+                <li><a href="portfolio-overview.html">리얼후기</a></li>
+                <li><a href="faq.html">자주묻는질문</a></li>
+                <li><a href="blog-home.html" class="active">매거진</a></li>
+                <li><a href="contact.html">제휴문의</a></li>
+            </ul>
+            <a href="https://t.me/koreaseo" target="_blank" class="btn-tg">텔레그램 예약</a>
+        </div>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>힐링 & 건강 <span>마사지 매거진</span></h1>
+            <p>피로 회복 노하우부터 스웨디시, 홈타이 이용 가이드까지 지금출장마사지가 전하는 유익하고 품격 있는 칼럼을 만나보세요.</p>
+        </div>
+    </section>
+
+    <!-- 블로그 포스팅 목록 섹션 -->
+    <section class="blog-list-section">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- 포스팅 카드 1 -->
+                <article class="blog-card">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="스웨디시 테라피 효과" class="blog-thumb">
+                        <div class="blog-body">
+                            <div>
+                                <div class="blog-meta">
+                                    <span>테라피 가이드</span>
+                                    <span class="blog-date">2026.06.01</span>
+                                </div>
+                                <h3>스웨디시 테라피란? 부드러운 림프 순환과 스트레스 해소의 비밀</h3>
+                                <p>일상에 지친 현대인들에게 사랑받는 스웨디시 테라피의 유래와 오일 마사지가 신체 림프 순환에 미치는 긍정적 효과를 자세히 알아봅니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 25px 25px 25px;">
+                        <a href="post-1.html" class="read-more">자세히 보기 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 포스팅 카드 2 -->
+                <article class="blog-card">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="출장마사지 후불제 안심 이용" class="blog-thumb">
+                        <div class="blog-body">
+                            <div>
+                                <div class="blog-meta">
+                                    <span>이용 꿀팁</span>
+                                    <span class="blog-date">2026.05.28</span>
+                                </div>
+                                <h3>출장마사지 이용 시 '100% 후불제'가 절대적으로 안전한 이유</h3>
+                                <p>선입금 사기 피해를 예방하고 안심하고 서비스를 이용하실 수 있는 후불제 시스템의 핵심 원칙과 올바른 예약 업소 선택 가이드.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 25px 25px 25px;">
+                        <a href="post-2.html" class="read-more">자세히 보기 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 포스팅 카드 3 -->
+                <article class="blog-card">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="홈타이 마사지 장소 추천" class="blog-thumb">
+                        <div class="blog-body">
+                            <div>
+                                <div class="blog-meta">
+                                    <span>홈케어 라이프</span>
+                                    <span class="blog-date">2026.05.15</span>
+                                </div>
+                                <h3>내 방이 곧 럭셔리 스파! 홈타이 및 방문 마사지의 모든 것</h3>
+                                <p>이동 시간 없이 자택이나 호텔 등 개인 공간에서 누리는 프라이빗 방문 테라피의 장점과 최적의 힐링 환경 조성 팁을 공유해 드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 25px 25px 25px;">
+                        <a href="post-3.html" class="read-more">자세히 보기 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 💡 [안내] 나중에 새로운 글을 추가하실 때 아래 <article class="blog-card"> 구문을 복사해서 위에 추가하시면 됩니다! -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <div class="container">
+            <div class="footer-nav">
+                <a href="about.html">브랜드소개</a> |
+                <a href="pricing.html">코스 & 가격</a> |
+                <a href="index.html#regions">지역별 안내</a> |
+                <a href="portfolio-overview.html">리얼후기</a> |
+                <a href="faq.html">자주묻는질문</a> |
+                <a href="blog-home.html">마사지 매거진</a> |
+                <a href="contact.html">제휴문의</a> |
+                <a href="sitemap.html"><strong>사이트맵 (Sitemap)</strong></a>
+            </div>
+            <div class="footer-info">
+                <p><strong>지금출장마사지</strong> | 24시간 방문 출장 서비스</p>
+                <p>본 사이트는 100% 후불제로 운영되며 선입금을 절대 요구하지 않습니다.</p>
+                <p style="margin-top:10px; color:#64748b;">© 2026 지금출장마사지. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 모바일 하단 스티키 예약 CTA 바 -->
+    <div class="mobile-sticky-cta">
+        <a href="https://t.me/koreaseo" target="_blank" class="mobile-cta-btn tg">
+            ✈️ 텔레그램 실시간 예약 / 문의
+        </a>
+    </div>
+
+</body>
+</html>

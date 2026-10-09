@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 기본 메타 태그 -->
+    <title>브랜드 소개 및 철학 | 지금출장마사지 - 24시 프리미엄 방문 홈타이·스웨디시</title>
+    <meta name="description" content="지금출장마사지의 프리미엄 힐링 철학, 100% 후불제 안심 시스템, 엄선된 20대 전문 테라피스트 프로세스 및 전국 167개 네트워크 비전을 소개합니다[cite: 2].">
+    <meta name="keywords" content="지금출장마사지 브랜드소개, 출장안마 철학, 스웨디시 특징, 홈타이 가이드, 후불제 출장마사지[cite: 2]">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nowmassage24.com/about">
+
+    <!-- 파비콘 및 애플 터치 아이콘 설정 -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta name="theme-color" content="#0b0f19">
+
+    <!-- Schema.org 구조화 데이터 (AboutPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "지금출장마사지 브랜드 소개",
+      "description": "국내 최고 수준의 24시 방문 출장마사지 서비스 철학 및 이용 가이드",
+      "url": "https://nowmassage24.com/about"
+    }
+    </script>
+
+    <!-- 스타일시트 (다크 럭셔리 + 반응형 UX) -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #151c2c;
+            --bg-card-sub: #1e293b;
+            --bg-nav: #0f172a;
+            --accent-gold: #f59e0b;
+            --accent-gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #1e293b;
+            --telegram-color: #0088cc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding-bottom: 70px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 헤더 & 네비게이션 */
+        header {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-gold);
+        }
+
+        .btn-tg {
+            background-color: var(--telegram-color);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 페이지 헤더 */
+        .page-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1e293b 0%, var(--bg-main) 70%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .page-header h1 span {
+            color: var(--accent-gold);
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            word-break: keep-all;
+        }
+
+        /* 섹션 공통 */
+        section {
+            padding: 70px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* 브랜드 스토리 레이아웃 (이미지 + 텍스트 교차 구조) */
+        .story-section {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .story-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .story-row.reverse {
+            direction: rtl;
+        }
+
+        .story-row.reverse > * {
+            direction: ltr;
+        }
+
+        .story-image {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.85);
+            transition: transform 0.5s ease;
+        }
+
+        .story-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .story-content h3 {
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .story-content p {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            margin-bottom: 15px;
+            word-break: keep-all;
+        }
+
+        /* 핵심 가치 4열 그리드 */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .value-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gold-gradient);
+        }
+
+        .value-icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+
+        /* 프로세스 단계 안내 (스텝별 카드) */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .process-step {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-num {
+            width: 45px;
+            height: 45px;
+            background: var(--accent-gold-gradient);
+            color: #000;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .process-step h4 {
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* 추가 심층 강화 원고 섹션 (Expert Content) */
+        .deep-content-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 50px;
+            margin-top: 50px;
+        }
+
+        .deep-content-box h3 {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .deep-content-box p {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            word-break: keep-all;
+        }
+
+        .deep-content-box ul {
+            margin: 20px 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .deep-content-box ul li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .deep-content-box ul li strong {
+            color: #fff;
+        }
+
+        /* 비전 콜투액션 배너 */
+        .vision-banner {
+            background: radial-gradient(circle, #1e293b 0%, var(--bg-main) 70%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .vision-banner h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .vision-banner p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            word-break: keep-all;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold-gradient);
+            color: #000;
+            padding: 14px 35px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: var(--bg-nav);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav a {
+            color: var(--text-main);
+        }
+
+        .footer-info {
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        /* 모바일 스티키 하단 CTA */
+        .mobile-sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: rgba(15, 23, 42, 0.98);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            z-index: 2000;
+        }
+
+        .mobile-cta-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        .mobile-cta-btn.tg {
+            background-color: var(--telegram-color);
+        }
+
+        /* 반응형 미디어쿼리 */
+        @media (max-width: 900px) {
+            .story-row, .story-row.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+                gap: 30px;
+            }
+            .story-image img {
+                height: 280px;
+            }
+            .deep-content-box {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 영역 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="/" class="logo">지금출장마사지</a>
+            <ul class="nav-menu">
+                <li><a href="/">홈</a></li>
+                <li><a href="/about" class="active">브랜드소개</a></li>
+                <li><a href="/pricing">코스 & 가격</a></li>
+                <li><a href="/#regions">지역별 안내</a></li>
+                <li><a href="/portfolio-overview">리얼후기</a></li>
+                <li><a href="/faq">자주묻는질문</a></li>
+                <li><a href="/blog-home">매거진</a></li>
+                <li><a href="/contact">제휴문의</a></li>
+            </ul>
+            <a href="https://t.me/koreaseo" target="_blank" class="btn-tg">텔레그램 예약</a>
+        </div>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>지친 일상에 스며드는 <span>품격 있는 힐링의 기준</span></h1>
+            <p>이동의 번거로움을 지우고 가장 편안한 공간에서 완성되는 지금출장마사지만의 프리미엄 방문 테라피 철학과 가치를 소개합니다[cite: 2].</p>
+        </div>
+    </section>
+
+    <!-- 브랜드 스토리 섹션 (교차 배치 이미지 + 텍스트) -->
+    <section class="brand-story-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>브랜드 스토리 & 철학</h2>
+                <p>고객의 온전한 휴식을 위해 태어난 프리미엄 방문 테라피 브랜드[cite: 2]</p>
+            </div>
+
+            <div class="story-section">
+                <!-- 첫 번째 줄 -->
+                <div class="story-row">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80" alt="프리미엄 힐링 룸">
+                    </div>
+                    <div class="story-content">
+                        <h3>"숍을 찾아 이동하는 피로를 없애다"</h3>
+                        <p>바쁘게 살아가는 현대인들에게 가장 부족한 자원은 온전한 휴식의 시간입니다. 피로를 풀기 위해 마사지 숍을 찾아 이동하고, 주차 전쟁을 치르는 과정 자체가 또 다른 스트레스가 되곤 합니다[cite: 2].</p>
+                        <p><strong>지금출장마사지</strong>는 이러한 불편함을 해소하기 위해 시작되었습니다[cite: 2]. 고객님이 계신 그곳이 어디든, 숙련된 전문 테라피스트가 직접 찾아가 세상에서 가장 편안한 휴식을 선사합니다[cite: 2].</p>
+                    </div>
+                </div>
+
+                <!-- 두 번째 줄 (반전 레이아웃) -->
+                <div class="story-row reverse">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1000&q=80" alt="고급 아로마 오일 테라피">
+                    </div>
+                    <div class="story-content">
+                        <h3>"익숙한 공간에서 누리는 극상의 프라이버시"</h3>
+                        <p>내 집 거실, 포근한 침실, 혹은 출장 중 머무는 호텔과 오피스텔 등 익숙하고 안전한 개인 공간은 긴장을 풀기에 가장 완벽한 장소입니다[cite: 2].</p>
+                        <p>우리는 고객의 독립된 공간과 프라이버시를 완벽히 존중하며, 외부 시선에 구애받지 않고 오직 마사지와 힐링 그 자체에만 온전히 집중할 수 있는 환경을 구축하고 있습니다[cite: 2].</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 핵심 가치 4열 그리드 -->
+    <section class="brand-values">
+        <div class="container">
+            <div class="section-title">
+                <h2>지금출장마사지가 약속하는 4대 핵심 가치</h2>
+                <p>타협하지 않는 원칙으로 최고의 만족과 안전을 보장합니다[cite: 2].</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🛡️</div>
+                    <h3>100% 안심 후불제</h3>
+                    <p>선입금이나 예약금 요구로 인한 피해를 사전에 차단합니다[cite: 2]. 관리사가 현장에 안전하게 도착한 것을 확인하신 후 결제하는 투명한 시스템입니다[cite: 2].</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💎</div>
+                    <h3>검증된 전문 테라피스트</h3>
+                    <p>엄격한 실무 교육과 마인드 수료 과정을 거친 베테랑 테라피스트가 배정되어 체형과 피로도에 맞춘 섬세한 1:1 맞춤 케어를 진행합니다[cite: 2].</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>전국 30분 신속 방문</h3>
+                    <p>전국 주요 거점에 상시 대기 중인 네트워크망을 통해, 예약 접수 후 평균 20~30분 이내에 신속하게 방문하여 기다림의 지루함을 없앴습니다[cite: 2].</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌿</div>
+                    <h3>프리미엄 전용 용품 지참</h3>
+                    <p>고급 천연 아로마 오일, 위생적인 대형 타월 및 일회용품 등 케어에 필요한 모든 물품을 직접 구비하여 방문하므로 따로 준비하실 것이 없습니다[cite: 2].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 서비스 이용 프로세스 단계 -->
+    <section class="service-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>스마트 예약 및 방문 프로세스</h2>
+                <p>복잡한 절차 없이 간편하고 빠르게 힐링을 만나보세요[cite: 2].</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <h4>코스 & 지역 선택</h4>
+                    <p>홈페이지에서 원하는 스웨디시, 아로마, 홈타이 코스와 거주 지역을 확인합니다[cite: 2].</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <h4>24시 실시간 접수</h4>
+                    <p>텔레그램 채널을 통해 주소와 원하시는 시간대를 간편하게 접수합니다[cite: 2].</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <h4>전문가 신속 출동</h4>
+                    <p>가장 가까운 거점에 대기 중인 관리사가 30분 내로 신속하게 방문합니다[cite: 2].</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">04</div>
+                    <h4>현장 후불제 결제</h4>
+                    <p>관리사 도착 후 직접 서비스를 확인하신 뒤 안전하게 후불 결제합니다[cite: 2].</p>
+                </div>
+            </div>
+
+            <!-- 🌟 [추가됨] 프로세스 다음으로 이어지는 심층 브랜드 신뢰 강화 원고 박스 -->
+            <div class="deep-content-box">
+                <h3>왜 지금출장마사지의 방문 케어가 특별할까요?</h3>
+                <p>당사는 단순히 마사지 서비스를 제공하는 것을 넘어, 고객 한 분 한 분의 라이프스타일에 맞춘 프리미엄 웰니스 솔루션을 지향합니다. 외부 시선이나 소음으로부터 완전히 차단된 고객만의 독립된 공간에서 진행되는 만큼, 위생과 보안 측면에서 철저한 관리가 이루어집니다.</p>
+                
+                <p>모든 관리사는 입점 전 철원 심층 검증과 실무 테크닉 평정을 통과한 정예 인력으로만 편성되며, 고객의 몸 상태와 근육 결을 섬세하게 읽어내어 피로 물질을 효과적으로 배출시키는 림프 순환 케어를 선사합니다.</p>
+
+                <ul>
+                    <li><strong>철저한 위생 및 일회용품 관리:</strong> 사용되는 모든 타월과 시트는 철저한 고온 살균 세탁을 거치며, 일회용 가운과 비품은 1회 사용 후 즉시 폐기하여 청결함을 엄수합니다.</li>
+                    <li><strong>고객 맞춤형 아로마 블렌딩:</strong> 인체에 무해한 프리미엄 천연 식물성 오일을 사용하여 민감한 피부를 가진 고객분들도 안심하고 깊은 보습과 이완을 누리실 수 있습니다.</li>
+                    <li><strong>365일 연중무휴 상시 대기망:</strong> 명절이나 주말, 심야 시간대에도 공백 없는 실시간 배차 시스템을 가동하여 언제 원하시든 기다림 없는 힐링을 보장합니다.</li>
+                </ul>
+
+                <p style="margin-top: 20px; margin-bottom: 0;">타협 없는 품질과 오직 고객 만족을 최우선으로 여기는 철학을 바탕으로, 지금출장마사지는 앞으로도 대한민국을 대표하는 신뢰의 방문 힐링 파트너로서 언제나 고객 곁에 머물겠습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 하단 비전 콜투액션 배너 -->
+    <section class="vision-section">
+        <div class="container">
+            <div class="vision-banner">
+                <h2>오늘 밤, 당신의 지친 피로를 완벽하게 지워드립니다</h2>
+                <p>전국 어디서나 24시간 연중무휴로 열려 있는 지금출장마사지와 함께 매일 밤 깊은 숙면과 최상의 힐링을 경험해 보세요[cite: 2].</p>
+                <a href="https://t.me/koreaseo" target="_blank" class="btn-primary">
+                    ⚡ 24시 텔레그램 실시간 예약하기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 영역 -->
+    <footer>
+        <div class="container">
+            <div class="footer-nav">
+                <a href="/about">브랜드소개</a> |
+                <a href="/pricing">코스 & 가격</a> |
+                <a href="/#regions">지역별 안내</a> |
+                <a href="/portfolio-overview">리얼후기</a> |
+                <a href="/faq">자주묻는질문</a> |
+                <a href="/blog-home">마사지 매거진</a> |
+                <a href="/contact">제휴문의</a> |
+                <a href="/sitemap"><strong>사이트맵 (Sitemap)</strong></a>
+            </div>
+            <div class="footer-info">
+                <p><strong>지금출장마사지</strong> | 24시간 방문 출장 서비스</p>
+                <p>본 사이트는 100% 후불제로 운영되며 선입금을 절대 요구하지 않습니다.</p>
+                <p style="margin-top:10px; color:#64748b;">© 2026 지금출장마사지. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 모바일 하단 스티키 예약 CTA 바 -->
+    <div class="mobile-sticky-cta">
+        <a href="https://t.me/koreaseo" target="_blank" class="mobile-cta-btn tg">
+            ✈️ 텔레그램 실시간 예약
+        </a>
+    </div>
+
+</body>
+</html>
