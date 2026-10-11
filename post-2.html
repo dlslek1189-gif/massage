@@ -43,7 +43,7 @@
     }
     </script>
 
-    <!-- 스타일시트 (다크 럭셔리 + 상세 블로그 포스팅 독서 최적화 UX) -->
+    <!-- 스타일시트 (클린 URL 구조 최적화) -->
     <style>
         html {
             scroll-behavior: smooth;
@@ -101,7 +101,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            height: 75px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -115,31 +115,91 @@
 
         .nav-menu {
             display: flex;
-            gap: 18px;
+            gap: 24px;
             list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu li {
+            display: flex;
+            align-items: center;
+            position: relative;
         }
 
         .nav-menu a {
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-muted);
             transition: color 0.2s;
+            padding: 10px 0;
         }
 
         .nav-menu a:hover, .nav-menu a.active {
             color: var(--accent-gold);
         }
 
+        /* 상단 전지역 드롭다운 메뉴 */
+        .has-dropdown { position: relative; }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background-color: #0e1422;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            width: 720px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1100;
+        }
+
+        .dropdown-menu::-webkit-scrollbar { width: 6px; }
+        .dropdown-menu::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.3); border-radius: 4px; }
+
+        .has-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu a {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.2s;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.08);
+        }
+
         .btn-tg {
             background-color: var(--telegram-color);
             color: #fff;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
         }
 
         /* 포스트 헤더 영역 */
@@ -288,33 +348,97 @@
             font-size: 0.95rem;
         }
 
-        /* 푸터 */
+        /* 푸터 (전체 지역 맵 완비) */
         footer {
             background-color: var(--bg-nav);
             border-top: 1px solid var(--border-color);
-            padding: 40px 0 20px;
-            font-size: 0.85rem;
+            padding: 65px 0 45px;
+            font-size: 0.9rem;
             color: var(--text-muted);
         }
 
-        .footer-nav {
+        .footer-menu-row {
             max-width: 1200px;
-            margin: 0 auto 20px;
+            margin: 0 auto 45px;
+            padding: 0 20px 25px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .footer-menu-row a {
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .footer-menu-row a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-regions-container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        .footer-nav a {
-            color: var(--text-main);
+        .footer-regions-group {
+            margin-bottom: 35px;
         }
 
-        .footer-info {
+        .footer-regions-group h4 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .regions-tag-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px;
+        }
+
+        .regions-tag-list a {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 10px 8px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+            transition: all 0.2s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .regions-tag-list a:hover {
+            color: #fff;
+            border-color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .footer-copyright {
+            max-width: 1200px;
+            margin: 45px auto 0;
+            padding: 35px 20px 0;
             text-align: center;
             border-top: 1px solid var(--border-color);
-            padding-top: 20px;
+        }
+
+        .footer-copyright p {
+            margin-bottom: 6px;
         }
 
         /* 모바일 스티키 하단 CTA */
@@ -323,26 +447,20 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 60px;
-            background-color: rgba(15, 23, 42, 0.98);
-            border-top: 1px solid var(--border-color);
-            display: flex;
+            height: 70px;
+            background-color: var(--telegram-color);
+            display: none;
             z-index: 2000;
         }
 
-        .mobile-cta-btn {
+        .mobile-action-btn {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            font-weight: 700;
-            font-size: 0.95rem;
+            font-weight: 800;
+            font-size: 1.1rem;
             color: #fff;
-        }
-
-        .mobile-cta-btn.tg {
-            background-color: var(--telegram-color);
         }
 
         /* 반응형 미디어쿼리 */
@@ -359,26 +477,218 @@
             .post-cta-box {
                 padding: 30px 20px;
             }
+            .regions-tag-list {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            }
+            .mobile-sticky-cta {
+                display: flex;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- 헤더 영역 -->
+    <!-- 헤더 영역 (클린 URL 네비게이션) -->
     <header>
         <div class="nav-wrapper">
-            <a href="index" class="logo">지금출장마사지</a>
+            <a href="/" class="logo">지금출장마사지</a>
             <ul class="nav-menu">
-                <li><a href="index">홈</a></li>
-                <li><a href="about">브랜드소개</a></li>
-                <li><a href="pricing">코스 & 가격</a></li>
-                <li><a href="index#regions">지역별 안내</a></li>
-                <li><a href="portfolio-overview">리얼후기</a></li>
-                <li><a href="faq">자주묻는질문</a></li>
-                <li><a href="blog-home" class="active">매거진</a></li>
-                <li><a href="contact">제휴문의</a></li>
+                <li><a href="/">홈</a></li>
+                <li><a href="/about">브랜드소개</a></li>
+                <li><a href="/pricing">코스 & 가격</a></li>
+                
+                <!-- 상단 전지역 확장형 드롭다운 메뉴 -->
+                <li class="has-dropdown">
+                    <a href="/#regions">서비스지역 ▾</a>
+                    <div class="dropdown-menu">
+                        <a href="/seoul">서울</a>
+                        <a href="/gangnam">강남</a>
+                        <a href="/mapo">마포</a>
+                        <a href="/songpa">송파</a>
+                        <a href="/jongno">종로</a>
+                        <a href="/suwon">수원</a>
+                        <a href="/bucheon">부천</a>
+                        <a href="/incheon">인천</a>
+                        <a href="/goyang">고양</a>
+                        <a href="/ansan">안산</a>
+                        <a href="/hwaseong">화성</a>
+                        <a href="/pyeongtaek">평택</a>
+                        <a href="/yongin">용인</a>
+                        <a href="/seongnam">성남</a>
+                        <a href="/hanam">하남</a>
+                        <a href="/anyang">안양</a>
+                        <a href="/siheung">시흥</a>
+                        <a href="/paju">파주</a>
+                        <a href="/uijeongbu">의정부</a>
+                        <a href="/gwangmyeong">광명</a>
+                        <a href="/osan">오산</a>
+                        <a href="/gunpo">군포</a>
+                        <a href="/gwacheon">과천</a>
+                        <a href="/gimpo">김포</a>
+                        <a href="/ilsan">일산</a>
+                        <a href="/dongducheon">동두천</a>
+                        <a href="/guri">구리</a>
+                        <a href="/yangju">양주</a>
+                        <a href="/namyangju">남양주</a>
+                        <a href="/pocheon">포천</a>
+                        <a href="/uiwang">의왕</a>
+                        <a href="/icheon">이천</a>
+                        <a href="/anseong">안성</a>
+                        <a href="/yeoncheon">연천</a>
+                        <a href="/yangpyeong">양평</a>
+                        <a href="/yeoju">여주</a>
+                        <a href="/gapyeong">가평</a>
+                        <a href="/bundang">분당</a>
+                        <a href="/dongtan">동탄</a>
+                        <a href="/gyeonggigwangju">경기광주</a>
+                        <a href="/ganghwa">강화</a>
+                        <a href="/ongjin">옹진</a>
+                        
+                        <!-- 충청권 -->
+                        <a href="/cheonan">천안</a>
+                        <a href="/daejeon">대전</a>
+                        <a href="/cheongju">청주</a>
+                        <a href="/sejong">세종</a>
+                        <a href="/chungju">충주</a>
+                        <a href="/jecheon">제천</a>
+                        <a href="/gongju">공주</a>
+                        <a href="/boryeong">보령</a>
+                        <a href="/asan">아산</a>
+                        <a href="/seosan">서산</a>
+                        <a href="/nonsan">논산</a>
+                        <a href="/gyeryong">계룡</a>
+                        <a href="/dangjin">당진</a>
+                        <a href="/hongseong">홍성</a>
+                        <a href="/yeongdong">영동</a>
+                        <a href="/jeungpyeong">증평</a>
+                        <a href="/jincheon">진천</a>
+                        <a href="/eumseong">음성</a>
+                        <a href="/boeun">보은</a>
+                        <a href="/okcheon">옥천</a>
+                        <a href="/goesan">괴산</a>
+                        <a href="/danyang">단양</a>
+                        <a href="/buyeo">부여</a>
+                        <a href="/yesan">예산</a>
+                        <a href="/taean">태안</a>
+                        <a href="/seocheon">서천</a>
+                        <a href="/geumsan">금산</a>
+                        <a href="/cheongyang">청양</a>
+
+                        <!-- 강원권 -->
+                        <a href="/chuncheon">춘천</a>
+                        <a href="/wonju">원주</a>
+                        <a href="/gangneung">강릉</a>
+                        <a href="/donghae">동해</a>
+                        <a href="/taebaek">태백</a>
+                        <a href="/sokcho">속초</a>
+                        <a href="/samcheok">삼척</a>
+                        <a href="/yangyang">양양</a>
+                        <a href="/hongcheon">홍천</a>
+                        <a href="/hoengseong">횡성</a>
+                        <a href="/yeongwol">영월</a>
+                        <a href="/pyeongchang">평창</a>
+                        <a href="/jeongseon">정선</a>
+                        <a href="/cheorwon">철원</a>
+                        <a href="/hwacheon">화천</a>
+                        <a href="/yanggu">양구</a>
+                        <a href="/inje">인제</a>
+                        <a href="/goseong">고성</a>
+
+                        <!-- 전라권 -->
+                        <a href="/gwangju">광주</a>
+                        <a href="/jeonju">전주</a>
+                        <a href="/iksan">익산</a>
+                        <a href="/gunsan">군산</a>
+                        <a href="/jeongeup">정읍</a>
+                        <a href="/gimje">김제</a>
+                        <a href="/namwon">남원</a>
+                        <a href="/mokpo">목포</a>
+                        <a href="/yeosu">여수</a>
+                        <a href="/suncheon">순천</a>
+                        <a href="/naju">나주</a>
+                        <a href="/gwangyang">광양</a>
+                        <a href="/damyang">담양</a>
+                        <a href="/hwasun">화순</a>
+                        <a href="/boseong">보성</a>
+                        <a href="/jangheung">장흥</a>
+                        <a href="/haenam">해남</a>
+                        <a href="/yeongam">영암</a>
+                        <a href="/muan">무안</a>
+                        <a href="/gochang">고창</a>
+                        <a href="/gokseong">곡성</a>
+                        <a href="/wando">완도</a>
+                        <a href="/sinan">신안</a>
+                        <a href="/buan">부안</a>
+                        <a href="/wanju">완주</a>
+                        <a href="/jinan">진안</a>
+                        <a href="/muju">무주</a>
+                        <a href="/jangsu">장수</a>
+                        <a href="/imsil">임실</a>
+                        <a href="/sunchang">순창</a>
+                        <a href="/gurye">구례</a>
+                        <a href="/goheung">고흥</a>
+                        <a href="/gangjin">강진</a>
+                        <a href="/hampyeong">함평</a>
+                        <a href="/yeonggwang">영광</a>
+                        <a href="/jangseong">장성</a>
+                        <a href="/jindo">진도</a>
+
+                        <!-- 경상권 -->
+                        <a href="/busan">부산</a>
+                        <a href="/daegu">대구</a>
+                        <a href="/ulsan">울산</a>
+                        <a href="/pohang">포항</a>
+                        <a href="/gyeongju">경주</a>
+                        <a href="/gimcheon">김천</a>
+                        <a href="/andong">안동</a>
+                        <a href="/gumi">구미</a>
+                        <a href="/yeongju">영주</a>
+                        <a href="/yeongcheon">영천</a>
+                        <a href="/sangju">상주</a>
+                        <a href="/mungyeong">문경</a>
+                        <a href="/gyeongsan">경산</a>
+                        <a href="/changwon">창원</a>
+                        <a href="/gimhae">김해</a>
+                        <a href="/jinju">진주</a>
+                        <a href="/yangsan">양산</a>
+                        <a href="/geoje">거제</a>
+                        <a href="/tongyeong">통영</a>
+                        <a href="/sacheon">사천</a>
+                        <a href="/miryang">밀양</a>
+                        <a href="/namhae">남해</a>
+                        <a href="/hadong">하동</a>
+                        <a href="/sancheong">산청</a>
+                        <a href="/hamyang">함양</a>
+                        <a href="/geochang">거창</a>
+                        <a href="/hapcheon">합천</a>
+                        <a href="/haman">함안</a>
+                        <a href="/uiryeong">의령</a>
+                        <a href="/changnyeong">창녕</a>
+                        <a href="/goseong-gn">고성(경남)</a>
+                        <a href="/gunwi">군위</a>
+                        <a href="/uiseong">의성</a>
+                        <a href="/cheongsong">청송</a>
+                        <a href="/yeongyang">영양</a>
+                        <a href="/yeongdeok">영덕</a>
+                        <a href="/cheongdo">청도</a>
+                        <a href="/goryeong">고령</a>
+                        <a href="/seongju">성주</a>
+                        <a href="/chilgok">칠곡</a>
+                        <a href="/yecheon">예천</a>
+                        <a href="/bonghwa">봉화</a>
+                        <a href="/uljin">울진</a>
+                        <a href="/ulleung">울릉</a>
+
+                        <!-- 제주 -->
+                        <a href="/jeju">제주</a>
+                    </div>
+                </li>
+
+                <li><a href="/portfolio-overview">리얼후기</a></li>
+                <li><a href="/faq">자주묻는질문</a></li>
+                <li><a href="/blog-home" class="active">매거진</a></li>
             </ul>
-            <a href="https://t.me/koreaseo" target="_blank" class="btn-tg">텔레그램 예약</a>
+            <a href="tel:010-2753-2759" target="_blank" class="btn-tg">⚡ 실시간 빠른예약</a>
         </div>
     </header>
 
@@ -403,7 +713,7 @@
 
         <!-- 본문 내용 -->
         <article class="post-content">
-            <p>인터넷을 통해 출장마사지나 홈타이 서비스를 알아보다 보면 간혹 불미스러운 사기 피해 사례를 접하게 됩니다. 그 대부분의 공통점은 바로 정식 서비스를 받기도 전에 **예약금, 보증금, 교통비 등의 명목으로 먼저 돈을 송금(선입금)했다가 연락이 두절되는 경우**입니다.</p>
+            <p>인터넷을 통해 출장마사지나 홈타이 서비스를 알아보다 보면 간혹 불미스러운 사기 피해 사례를 접하게 됩니다. 그 대부분의 공통점은 바로 정식 서비스를 받기도 전에 <strong>예약금, 보증금, 교통비 등의 명목으로 먼저 돈을 송금(선입금)했다가 연락이 두절되는 경우</strong>입니다.</p>
             
             <p>소비자의 불안 심리를 악용하는 일부 불법 업체의 사기 수법으로부터 피해를 예방하고, 안심할 수 있는 건전한 예약 문화를 만들기 위해 왜 <strong>'100% 후불제'</strong>가 절대적으로 필수적인지 그 이유를 짚어봅니다.</p>
 
@@ -425,7 +735,7 @@
             <h2>3. 안심하고 출장마사지를 이용하기 위한 체크리스트</h2>
             <p>안전하고 쾌적한 힐링 시간을 보내기 위해 예약 전 다음 사항들을 반드시 확인하시는 것이 좋습니다.</p>
             <ul>
-                <li>사전 입금(예약금, 보증금)을 단 1원이라도 요구하는가? (즉시 거러야 하는 위험 신호입니다.)</li>
+                <li>사전 입금(예약금, 보증금)을 단 1원이라도 요구하는가? (즉시 걸러야 하는 위험 신호입니다.)</li>
                 <li>고객센터나 예약 채널(텔레그램 등)이 상시 투명하게 운영되는가?</li>
                 <li>지역 네트워크와 상세한 코스 안내가 명확하게 기재되어 있는가?</li>
             </ul>
@@ -438,40 +748,254 @@
         <div class="post-cta-box">
             <h3>선입금 걱정 없는 100% 안심 후불제 서비스를 만나보세요</h3>
             <p>전국 167개 도시 24시간 연중무휴, 30분 내 신속 방문 보장</p>
-            <a href="https://t.me/koreaseo" target="_blank" class="btn-primary">
+            <a href="tel:010-2753-2759" target="_blank" class="btn-primary">
                 ⚡ 텔레그램 실시간 안심 예약하기
             </a>
         </div>
 
         <div style="text-align: center;">
-            <a href="blog-home" class="back-to-list">&larr; 매거진 목록으로 돌아가기</a>
+            <a href="/blog-home" class="back-to-list">&larr; 매거진 목록으로 돌아가기</a>
         </div>
 
     </main>
 
-    <!-- 푸터 영역 -->
+    <!-- 푸터 (클린 URL 전체 지역 맵 완비) -->
     <footer>
-        <div class="footer-nav">
-            <a href="about">브랜드소개</a> |
-            <a href="pricing">코스 & 가격</a> |
-            <a href="index#regions">지역별 안내</a> |
-            <a href="portfolio-overview">리얼후기</a> |
-            <a href="faq">자주묻는질문</a> |
-            <a href="blog-home">마사지 매거진</a> |
-            <a href="contact">제휴문의</a> |
-            <a href="sitemap"><strong>사이트맵 (Sitemap)</strong></a>
+        <div class="footer-menu-row">
+            <a href="/">홈</a>
+            <a href="/about">브랜드소개</a>
+            <a href="/pricing">코스 & 가격</a>
+            <a href="/portfolio-overview">리얼후기</a>
+            <a href="/faq">자주묻는질문</a>
+            <a href="/blog-home">매거진</a>
+            <a href="/sitemap">사이트맵</a>
         </div>
-        <div class="footer-info">
+
+        <div class="footer-regions-container">
+            <!-- 수도권 영역 -->
+            <div class="footer-regions-group">
+                <h4>수도권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/seoul">서울</a>
+                    <a href="/gangnam">강남</a>
+                    <a href="/mapo">마포</a>
+                    <a href="/songpa">송파</a>
+                    <a href="/jongno">종로</a>
+                    <a href="/suwon">수원</a>
+                    <a href="/bucheon">부천</a>
+                    <a href="/incheon">인천</a>
+                    <a href="/goyang">고양</a>
+                    <a href="/ansan">안산</a>
+                    <a href="/hwaseong">화성</a>
+                    <a href="/pyeongtaek">평택</a>
+                    <a href="/yongin">용인</a>
+                    <a href="/seongnam">성남</a>
+                    <a href="/hanam">하남</a>
+                    <a href="/anyang">안양</a>
+                    <a href="/siheung">시흥</a>
+                    <a href="/paju">파주</a>
+                    <a href="/uijeongbu">의정부</a>
+                    <a href="/gwangmyeong">광명</a>
+                    <a href="/osan">오산</a>
+                    <a href="/gunpo">군포</a>
+                    <a href="/gwacheon">과천</a>
+                    <a href="/gimpo">김포</a>
+                    <a href="/ilsan">일산</a>
+                    <a href="/dongducheon">동두천</a>
+                    <a href="/guri">구리</a>
+                    <a href="/yangju">양주</a>
+                    <a href="/namyangju">남양주</a>
+                    <a href="/pocheon">포천</a>
+                    <a href="/uiwang">의왕</a>
+                    <a href="/icheon">이천</a>
+                    <a href="/anseong">안성</a>
+                    <a href="/yeoncheon">연천</a>
+                    <a href="/yangpyeong">양평</a>
+                    <a href="/yeoju">여주</a>
+                    <a href="/gapyeong">가평</a>
+                    <a href="/bundang">분당</a>
+                    <a href="/dongtan">동탄</a>
+                    <a href="/gyeonggigwangju">경기광주</a>
+                    <a href="/ganghwa">강화</a>
+                    <a href="/ongjin">옹진</a>
+                </div>
+            </div>
+
+            <!-- 충청권 영역 -->
+            <div class="footer-regions-group">
+                <h4>충청권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/cheonan">천안</a>
+                    <a href="/daejeon">대전</a>
+                    <a href="/cheongju">청주</a>
+                    <a href="/sejong">세종</a>
+                    <a href="/chungju">충주</a>
+                    <a href="/jecheon">제천</a>
+                    <a href="/gongju">공주</a>
+                    <a href="/boryeong">보령</a>
+                    <a href="/asan">아산</a>
+                    <a href="/seosan">서산</a>
+                    <a href="/nonsan">논산</a>
+                    <a href="/gyeryong">계룡</a>
+                    <a href="/dangjin">당진</a>
+                    <a href="/hongseong">홍성</a>
+                    <a href="/yeongdong">영동</a>
+                    <a href="/jeungpyeong">증평</a>
+                    <a href="/jincheon">진천</a>
+                    <a href="/eumseong">음성</a>
+                    <a href="/boeun">보은</a>
+                    <a href="/okcheon">옥천</a>
+                    <a href="/goesan">괴산</a>
+                    <a href="/danyang">단양</a>
+                    <a href="/buyeo">부여</a>
+                    <a href="/yesan">예산</a>
+                    <a href="/taean">태안</a>
+                    <a href="/seocheon">서천</a>
+                    <a href="/geumsan">금산</a>
+                    <a href="/cheongyang">청양</a>
+                </div>
+            </div>
+
+            <!-- 강원권 영역 -->
+            <div class="footer-regions-group">
+                <h4>강원권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/chuncheon">춘천</a>
+                    <a href="/wonju">원주</a>
+                    <a href="/gangneung">강릉</a>
+                    <a href="/donghae">동해</a>
+                    <a href="/taebaek">태백</a>
+                    <a href="/sokcho">속초</a>
+                    <a href="/samcheok">삼척</a>
+                    <a href="/yangyang">양양</a>
+                    <a href="/hongcheon">홍천</a>
+                    <a href="/hoengseong">횡성</a>
+                    <a href="/yeongwol">영월</a>
+                    <a href="/pyeongchang">평창</a>
+                    <a href="/jeongseon">정선</a>
+                    <a href="/cheorwon">철원</a>
+                    <a href="/hwacheon">화천</a>
+                    <a href="/yanggu">양구</a>
+                    <a href="/inje">인제</a>
+                    <a href="/goseong">고성</a>
+                </div>
+            </div>
+
+            <!-- 전라권 영역 -->
+            <div class="footer-regions-group">
+                <h4>전라권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/gwangju">광주</a>
+                    <a href="/jeonju">전주</a>
+                    <a href="/iksan">익산</a>
+                    <a href="/gunsan">군산</a>
+                    <a href="/jeongeup">정읍</a>
+                    <a href="/gimje">김제</a>
+                    <a href="/namwon">남원</a>
+                    <a href="/mokpo">목포</a>
+                    <a href="/yeosu">여수</a>
+                    <a href="/suncheon">순천</a>
+                    <a href="/naju">나주</a>
+                    <a href="/gwangyang">광양</a>
+                    <a href="/damyang">담양</a>
+                    <a href="/hwasun">화순</a>
+                    <a href="/boseong">보성</a>
+                    <a href="/jangheung">장흥</a>
+                    <a href="/haenam">해남</a>
+                    <a href="/yeongam">영암</a>
+                    <a href="/muan">무안</a>
+                    <a href="/gochang">고창</a>
+                    <a href="/gokseong">곡성</a>
+                    <a href="/wando">완도</a>
+                    <a href="/sinan">신안</a>
+                    <a href="/buan">부안</a>
+                    <a href="/wanju">완주</a>
+                    <a href="/jinan">진안</a>
+                    <a href="/muju">무주</a>
+                    <a href="/jangsu">장수</a>
+                    <a href="/imsil">임실</a>
+                    <a href="/sunchang">순창</a>
+                    <a href="/gurye">구례</a>
+                    <a href="/goheung">고흥</a>
+                    <a href="/gangjin">강진</a>
+                    <a href="/hampyeong">함평</a>
+                    <a href="/yeonggwang">영광</a>
+                    <a href="/jangseong">장성</a>
+                    <a href="/jindo">진도</a>
+                </div>
+            </div>
+
+            <!-- 경상권 영역 -->
+            <div class="footer-regions-group">
+                <h4>경상권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/busan">부산</a>
+                    <a href="/daegu">대구</a>
+                    <a href="/ulsan">울산</a>
+                    <a href="/pohang">포항</a>
+                    <a href="/gyeongju">경주</a>
+                    <a href="/gimcheon">김천</a>
+                    <a href="/andong">안동</a>
+                    <a href="/gumi">구미</a>
+                    <a href="/yeongju">영주</a>
+                    <a href="/yeongcheon">영천</a>
+                    <a href="/sangju">상주</a>
+                    <a href="/mungyeong">문경</a>
+                    <a href="/gyeongsan">경산</a>
+                    <a href="/changwon">창원</a>
+                    <a href="/gimhae">김해</a>
+                    <a href="/jinju">진주</a>
+                    <a href="/yangsan">양산</a>
+                    <a href="/geoje">거제</a>
+                    <a href="/tongyeong">통영</a>
+                    <a href="/sacheon">사천</a>
+                    <a href="/miryang">밀양</a>
+                    <a href="/namhae">남해</a>
+                    <a href="/hadong">하동</a>
+                    <a href="/sancheong">산청</a>
+                    <a href="/hamyang">함양</a>
+                    <a href="/geochang">거창</a>
+                    <a href="/hapcheon">합천</a>
+                    <a href="/haman">함안</a>
+                    <a href="/uiryeong">의령</a>
+                    <a href="/changnyeong">창녕</a>
+                    <a href="/goseong-gn">고성(경남)</a>
+                    <a href="/gunwi">군위</a>
+                    <a href="/uiseong">의성</a>
+                    <a href="/cheongsong">청송</a>
+                    <a href="/yeongyang">영양</a>
+                    <a href="/yeongdeok">영덕</a>
+                    <a href="/cheongdo">청도</a>
+                    <a href="/goryeong">고령</a>
+                    <a href="/seongju">성주</a>
+                    <a href="/chilgok">칠곡</a>
+                    <a href="/yecheon">예천</a>
+                    <a href="/bonghwa">봉화</a>
+                    <a href="/uljin">울진</a>
+                    <a href="/ulleung">울릉</a>
+                </div>
+            </div>
+
+            <!-- 제주권 영역 -->
+            <div class="footer-regions-group">
+                <h4>제주특별자치도 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/jeju">제주</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
             <p><strong>지금출장마사지</strong> | 24시간 방문 출장 서비스</p>
             <p>본 사이트는 100% 후불제로 운영되며 선입금을 절대 요구하지 않습니다.</p>
-            <p style="margin-top:10px; color:#64748b;">© 2026 지금출장마사지. All rights reserved.</p>
+            <p style="margin-top:10px; color:#4b5563;">© 2026 지금출장마사지. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- 모바일 하단 스티키 예약 CTA 바 -->
+    <!-- 모바일 스티키 CTA 바 -->
     <div class="mobile-sticky-cta">
-        <a href="https://t.me/koreaseo" target="_blank" class="mobile-cta-btn tg">
-            ✈️ 텔레그램 실시간 예약 / 문의
+        <a href="tel:010-2753-2759" target="_blank" class="mobile-action-btn">
+            ⚡ 24시 실시간 빠른예약 연결하기
         </a>
     </div>
 
