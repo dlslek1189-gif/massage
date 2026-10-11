@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nowmassage24.com/sitemap.xml
