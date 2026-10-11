@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO 기본 메타 태그 -->
-    <title>마사지 매거진 & 힐링 정보 | 지금출장마사지 공식 블로그</title>
-    <meta name="description" content="지금출장마사지가 전하는 홈케어 힐링 팁, 스웨디시·아로마 효능, 피로 회복 건강 가이드 및 유용한 출장마사지 이용 꿀팁을 확인해 보세요.">
-    <meta name="keywords" content="지금출장마사지 매거진, 마사지 블로그, 스웨디시 효능, 홈타이 팁, 피로회복 가이드">
+    <title>마사지 매거진 & 프리미엄 웰니스 칼럼 | 지금출장마사지 공식 블로그</title>
+    <meta name="description" content="지금출장마사지 공식 매거진. 스웨디시 테라피의 과학적 효능, 100% 후불제 안전 이용 가이드, 홈케어 림프 순환 및 만성피로 회복을 위한 전문 웰니스 칼럼을 만나보세요.">
+    <meta name="keywords" content="지금출장마사지 매거진, 마사지 블로그, 스웨디시 효능, 홈타이 팁, 피로회복 가이드, 후불제 출장안마">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nowmassage24.com/blog-home">
 
@@ -22,12 +22,12 @@
       "@context": "https://schema.org",
       "@type": "Blog",
       "name": "지금출장마사지 매거진",
-      "description": "건강, 피로 회복, 마사지 테라피 관련 전문 정보 블로그",
+      "description": "건강, 피로 회복, 마사지 테라피 및 방문 홈케어 전문 정보 블로그",
       "url": "https://nowmassage24.com/blog-home"
     }
     </script>
 
-    <!-- 스타일시트 (다크 럭셔리 + 블로그 카드 레이아웃) -->
+    <!-- 스타일시트 -->
     <style>
         html {
             scroll-behavior: smooth;
@@ -71,7 +71,7 @@
             padding: 0 20px;
         }
 
-        /* 헤더 & 네비게이션 */
+        /* 상단 네비게이션 및 확장형 드롭다운 */
         header {
             background-color: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(8px);
@@ -85,7 +85,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            height: 75px;
         }
 
         .logo {
@@ -97,45 +97,105 @@
 
         .nav-menu {
             display: flex;
-            gap: 18px;
+            gap: 24px;
             list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu li {
+            display: flex;
+            align-items: center;
+            position: relative;
         }
 
         .nav-menu a {
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-muted);
             transition: color 0.2s;
+            padding: 10px 0;
         }
 
         .nav-menu a:hover, .nav-menu a.active {
             color: var(--accent-gold);
         }
 
+        /* 상단 전지역 확장형 드롭다운 메뉴 */
+        .has-dropdown { position: relative; }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background-color: #0e1422;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            width: 720px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1100;
+        }
+
+        .dropdown-menu::-webkit-scrollbar { width: 6px; }
+        .dropdown-menu::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.3); border-radius: 4px; }
+
+        .has-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu a {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.2s;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.08);
+        }
+
         .btn-tg {
             background-color: var(--telegram-color);
             color: #fff;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
         }
 
         /* 페이지 헤더 */
         .page-header {
-            padding: 80px 0 50px;
+            padding: 85px 0 50px;
             text-align: center;
             background: radial-gradient(circle at top, #1e293b 0%, var(--bg-main) 70%);
             border-bottom: 1px solid var(--border-color);
         }
 
         .page-header h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             color: #fff;
             letter-spacing: -0.5px;
         }
@@ -146,23 +206,111 @@
 
         .page-header p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 650px;
+            font-size: 1.15rem;
+            max-width: 750px;
             margin: 0 auto;
+            word-break: keep-all;
+            line-height: 1.8;
+        }
+
+        /* 카테고리 필터 탭 */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* 피처드(주목할 만한) 포스트 배너 */
+        .featured-post-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 50px 0;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            transition: border-color 0.3s;
+        }
+
+        .featured-post-card:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .featured-thumb {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            object-fit: cover;
+            filter: brightness(0.9);
+        }
+
+        .featured-body {
+            padding: 45px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .badge-featured {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+
+        .featured-body h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 16px;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+
+        .featured-body p {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
             word-break: keep-all;
         }
 
         /* 섹션 공통 */
         section {
             padding: 60px 0;
-            border-bottom: 1px solid var(--border-color);
         }
 
         /* 블로그 카드 그리드 스타일 */
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 30px;
+            margin-bottom: 60px;
         }
 
         .blog-card {
@@ -183,14 +331,14 @@
 
         .blog-thumb {
             width: 100%;
-            height: 220px;
+            height: 230px;
             object-fit: cover;
             filter: brightness(0.9);
             border-bottom: 1px solid var(--border-color);
         }
 
         .blog-body {
-            padding: 25px;
+            padding: 30px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -201,9 +349,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--accent-gold);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             font-weight: 600;
         }
 
@@ -213,60 +361,153 @@
         }
 
         .blog-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             color: #fff;
-            margin-bottom: 12px;
-            line-height: 1.4;
+            margin-bottom: 14px;
+            line-height: 1.45;
             word-break: keep-all;
         }
 
         .blog-card p {
             color: var(--text-muted);
-            font-size: 0.93rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
+            font-size: 0.96rem;
+            margin-bottom: 24px;
+            line-height: 1.75;
             word-break: keep-all;
         }
 
         .read-more {
             color: var(--accent-gold);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
             transition: gap 0.2s;
         }
 
         .blog-card:hover .read-more {
-            gap: 8px;
+            gap: 10px;
         }
 
-        /* 푸터 */
+        /* 웰니스 지식 요약 박스 */
+        .info-highlight-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 50px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .info-highlight-box h3 {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-highlight-box p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            word-break: keep-all;
+        }
+
+        /* 푸터 스타일 */
         footer {
             background-color: var(--bg-nav);
             border-top: 1px solid var(--border-color);
-            padding: 40px 0 20px;
-            font-size: 0.85rem;
+            padding: 65px 0 45px;
+            font-size: 0.9rem;
             color: var(--text-muted);
         }
 
-        .footer-nav {
+        .footer-menu-row {
+            max-width: 1200px;
+            margin: 0 auto 45px;
+            padding: 0 20px 25px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
-            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .footer-nav a {
+        .footer-menu-row a {
             color: var(--text-main);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
         }
 
-        .footer-info {
+        .footer-menu-row a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-regions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-regions-group {
+            margin-bottom: 35px;
+        }
+
+        .footer-regions-group h4 {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .regions-tag-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px;
+        }
+
+        .regions-tag-list a {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 10px 8px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+            transition: all 0.2s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .regions-tag-list a:hover {
+            color: #fff;
+            border-color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .footer-copyright {
+            max-width: 1200px;
+            margin: 45px auto 0;
+            padding: 35px 20px 0;
             text-align: center;
             border-top: 1px solid var(--border-color);
-            padding-top: 20px;
+        }
+
+        .footer-copyright p {
+            margin-bottom: 6px;
         }
 
         /* 모바일 스티키 하단 CTA */
@@ -275,26 +516,20 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 60px;
-            background-color: rgba(15, 23, 42, 0.98);
-            border-top: 1px solid var(--border-color);
-            display: flex;
+            height: 70px;
+            background-color: var(--telegram-color);
+            display: none;
             z-index: 2000;
         }
 
-        .mobile-cta-btn {
+        .mobile-action-btn {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            font-weight: 700;
-            font-size: 0.95rem;
+            font-weight: 800;
+            font-size: 1.1rem;
             color: #fff;
-        }
-
-        .mobile-cta-btn.tg {
-            background-color: var(--telegram-color);
         }
 
         /* 반응형 미디어쿼리 */
@@ -303,10 +538,22 @@
                 display: none;
             }
             .page-header h1 {
-                font-size: 2rem;
+                font-size: 2.1rem;
+            }
+            .featured-post-card {
+                grid-template-columns: 1fr;
+            }
+            .featured-thumb {
+                min-height: 220px;
             }
             .blog-grid {
                 grid-template-columns: 1fr;
+            }
+            .regions-tag-list {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            }
+            .mobile-sticky-cta {
+                display: flex;
             }
         }
     </style>
@@ -316,125 +563,616 @@
     <!-- 헤더 영역 -->
     <header>
         <div class="container nav-wrapper">
-            <a href="index" class="logo">지금출장마사지</a>
+            <a href="/" class="logo">지금출장마사지</a>
             <ul class="nav-menu">
-                <li><a href="index">홈</a></li>
-                <li><a href="about">브랜드소개</a></li>
-                <li><a href="pricing">코스 & 가격</a></li>
-                <li><a href="index#regions">지역별 안내</a></li>
-                <li><a href="portfolio-overview">리얼후기</a></li>
-                <li><a href="faq">자주묻는질문</a></li>
-                <li><a href="blog-home" class="active">매거진</a></li>
-                <li><a href="contact">제휴문의</a></li>
+                <li><a href="/">홈</a></li>
+                <li><a href="/about">브랜드소개</a></li>
+                <li><a href="/pricing">코스 & 가격</a></li>
+                
+                <!-- 상단 전지역 확장형 드롭다운 메뉴 -->
+                <li class="has-dropdown">
+                    <a href="/#regions">서비스지역 ▾</a>
+                    <div class="dropdown-menu">
+                        <a href="/seoul">서울</a>
+                        <a href="/gangnam">강남</a>
+                        <a href="/mapo">마포</a>
+                        <a href="/songpa">송파</a>
+                        <a href="/jongno">종로</a>
+                        <a href="/suwon">수원</a>
+                        <a href="/bucheon">부천</a>
+                        <a href="/incheon">인천</a>
+                        <a href="/goyang">고양</a>
+                        <a href="/ansan">안산</a>
+                        <a href="/hwaseong">화성</a>
+                        <a href="/pyeongtaek">평택</a>
+                        <a href="/yongin">용인</a>
+                        <a href="/seongnam">성남</a>
+                        <a href="/hanam">하남</a>
+                        <a href="/anyang">안양</a>
+                        <a href="/siheung">시흥</a>
+                        <a href="/paju">파주</a>
+                        <a href="/uijeongbu">의정부</a>
+                        <a href="/gwangmyeong">광명</a>
+                        <a href="/osan">오산</a>
+                        <a href="/gunpo">군포</a>
+                        <a href="/gwacheon">과천</a>
+                        <a href="/gimpo">김포</a>
+                        <a href="/ilsan">일산</a>
+                        <a href="/dongducheon">동두천</a>
+                        <a href="/guri">구리</a>
+                        <a href="/yangju">양주</a>
+                        <a href="/namyangju">남양주</a>
+                        <a href="/pocheon">포천</a>
+                        <a href="/uiwang">의왕</a>
+                        <a href="/icheon">이천</a>
+                        <a href="/anseong">안성</a>
+                        <a href="/yeoncheon">연천</a>
+                        <a href="/yangpyeong">양평</a>
+                        <a href="/yeoju">여주</a>
+                        <a href="/gapyeong">가평</a>
+                        <a href="/bundang">분당</a>
+                        <a href="/dongtan">동탄</a>
+                        <a href="/gyeonggigwangju">경기광주</a>
+                        <a href="/ganghwa">강화</a>
+                        <a href="/ongjin">옹진</a>
+                        
+                        <!-- 충청권 -->
+                        <a href="/cheonan">천안</a>
+                        <a href="/daejeon">대전</a>
+                        <a href="/cheongju">청주</a>
+                        <a href="/sejong">세종</a>
+                        <a href="/chungju">충주</a>
+                        <a href="/jecheon">제천</a>
+                        <a href="/gongju">공주</a>
+                        <a href="/boryeong">보령</a>
+                        <a href="/asan">아산</a>
+                        <a href="/seosan">서산</a>
+                        <a href="/nonsan">논산</a>
+                        <a href="/gyeryong">계룡</a>
+                        <a href="/dangjin">당진</a>
+                        <a href="/hongseong">홍성</a>
+                        <a href="/yeongdong">영동</a>
+                        <a href="/jeungpyeong">증평</a>
+                        <a href="/jincheon">진천</a>
+                        <a href="/eumseong">음성</a>
+                        <a href="/boeun">보은</a>
+                        <a href="/okcheon">옥천</a>
+                        <a href="/goesan">괴산</a>
+                        <a href="/danyang">단양</a>
+                        <a href="/buyeo">부여</a>
+                        <a href="/yesan">예산</a>
+                        <a href="/taean">태안</a>
+                        <a href="/seocheon">서천</a>
+                        <a href="/geumsan">금산</a>
+                        <a href="/cheongyang">청양</a>
+
+                        <!-- 강원권 -->
+                        <a href="/chuncheon">춘천</a>
+                        <a href="/wonju">원주</a>
+                        <a href="/gangneung">강릉</a>
+                        <a href="/donghae">동해</a>
+                        <a href="/taebaek">태백</a>
+                        <a href="/sokcho">속초</a>
+                        <a href="/samcheok">삼척</a>
+                        <a href="/yangyang">양양</a>
+                        <a href="/hongcheon">홍천</a>
+                        <a href="/hoengseong">횡성</a>
+                        <a href="/yeongwol">영월</a>
+                        <a href="/pyeongchang">평창</a>
+                        <a href="/jeongseon">정선</a>
+                        <a href="/cheorwon">철원</a>
+                        <a href="/hwacheon">화천</a>
+                        <a href="/yanggu">양구</a>
+                        <a href="/inje">인제</a>
+                        <a href="/goseong">고성</a>
+
+                        <!-- 전라권 -->
+                        <a href="/gwangju">광주</a>
+                        <a href="/jeonju">전주</a>
+                        <a href="/iksan">익산</a>
+                        <a href="/gunsan">군산</a>
+                        <a href="/jeongeup">정읍</a>
+                        <a href="/gimje">김제</a>
+                        <a href="/namwon">남원</a>
+                        <a href="/mokpo">목포</a>
+                        <a href="/yeosu">여수</a>
+                        <a href="/suncheon">순천</a>
+                        <a href="/naju">나주</a>
+                        <a href="/gwangyang">광양</a>
+                        <a href="/damyang">담양</a>
+                        <a href="/hwasun">화순</a>
+                        <a href="/boseong">보성</a>
+                        <a href="/jangheung">장흥</a>
+                        <a href="/haenam">해남</a>
+                        <a href="/yeongam">영암</a>
+                        <a href="/muan">무안</a>
+                        <a href="/gochang">고창</a>
+                        <a href="/gokseong">곡성</a>
+                        <a href="/wando">완도</a>
+                        <a href="/sinan">신안</a>
+                        <a href="/buan">부안</a>
+                        <a href="/wanju">완주</a>
+                        <a href="/jinan">진안</a>
+                        <a href="/muju">무주</a>
+                        <a href="/jangsu">장수</a>
+                        <a href="/imsil">임실</a>
+                        <a href="/sunchang">순창</a>
+                        <a href="/gurye">구례</a>
+                        <a href="/goheung">고흥</a>
+                        <a href="/gangjin">강진</a>
+                        <a href="/hampyeong">함평</a>
+                        <a href="/yeonggwang">영광</a>
+                        <a href="/jangseong">장성</a>
+                        <a href="/jindo">진도</a>
+
+                        <!-- 경상권 -->
+                        <a href="/busan">부산</a>
+                        <a href="/daegu">대구</a>
+                        <a href="/ulsan">울산</a>
+                        <a href="/pohang">포항</a>
+                        <a href="/gyeongju">경주</a>
+                        <a href="/gimcheon">김천</a>
+                        <a href="/andong">안동</a>
+                        <a href="/gumi">구미</a>
+                        <a href="/yeongju">영주</a>
+                        <a href="/yeongcheon">영천</a>
+                        <a href="/sangju">상주</a>
+                        <a href="/mungyeong">문경</a>
+                        <a href="/gyeongsan">경산</a>
+                        <a href="/changwon">창원</a>
+                        <a href="/gimhae">김해</a>
+                        <a href="/jinju">진주</a>
+                        <a href="/yangsan">양산</a>
+                        <a href="/geoje">거제</a>
+                        <a href="/tongyeong">통영</a>
+                        <a href="/sacheon">사천</a>
+                        <a href="/miryang">밀양</a>
+                        <a href="/namhae">남해</a>
+                        <a href="/hadong">하동</a>
+                        <a href="/sancheong">산청</a>
+                        <a href="/hamyang">함양</a>
+                        <a href="/geochang">거창</a>
+                        <a href="/hapcheon">합천</a>
+                        <a href="/haman">함안</a>
+                        <a href="/uiryeong">의령</a>
+                        <a href="/changnyeong">창녕</a>
+                        <a href="/goseong-gn">고성(경남)</a>
+                        <a href="/gunwi">군위</a>
+                        <a href="/uiseong">의성</a>
+                        <a href="/cheongsong">청송</a>
+                        <a href="/yeongyang">영양</a>
+                        <a href="/yeongdeok">영덕</a>
+                        <a href="/cheongdo">청도</a>
+                        <a href="/goryeong">고령</a>
+                        <a href="/seongju">성주</a>
+                        <a href="/chilgok">칠곡</a>
+                        <a href="/yecheon">예천</a>
+                        <a href="/bonghwa">봉화</a>
+                        <a href="/uljin">울진</a>
+                        <a href="/ulleung">울릉</a>
+
+                        <!-- 제주 -->
+                        <a href="/jeju">제주</a>
+                    </div>
+                </li>
+
+                <li><a href="/portfolio-overview">리얼후기</a></li>
+                <li><a href="/faq">자주묻는질문</a></li>
+                <li><a href="/blog-home" class="active">매거진</a></li>
             </ul>
-            <a href="https://t.me/koreaseo" target="_blank" class="btn-tg">텔레그램 예약</a>
+            <a href="tel:010-2753-2759" target="_blank" class="btn-tg">⚡ 실시간 빠른예약</a>
         </div>
     </header>
 
-    <!-- 페이지 헤더 -->
+    <!-- 페이지 헤더 및 카테고리 탭 -->
     <section class="page-header">
         <div class="container">
-            <h1>힐링 & 건강 <span>마사지 매거진</span></h1>
-            <p>피로 회복 노하우부터 스웨디시, 홈타이 이용 가이드까지 지금출장마사지가 전하는 유익하고 품격 있는 칼럼을 만나보세요.</p>
-        </div>
-    </section>
-
-    <!-- 블로그 포스팅 목록 섹션 -->
-    <section class="blog-list-section">
-        <div class="container">
-            <div class="blog-grid">
-                
-                <!-- 포스팅 카드 1 -->
-                <article class="blog-card">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="스웨디시 테라피 효과" class="blog-thumb">
-                        <div class="blog-body">
-                            <div>
-                                <div class="blog-meta">
-                                    <span>테라피 가이드</span>
-                                    <span class="blog-date">2026.06.01</span>
-                                </div>
-                                <h3>스웨디시 테라피란? 부드러운 림프 순환과 스트레스 해소의 비밀</h3>
-                                <p>일상에 지친 현대인들에게 사랑받는 스웨디시 테라피의 유래와 오일 마사지가 신체 림프 순환에 미치는 긍정적 효과를 자세히 알아봅니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 25px 25px 25px;">
-                        <a href="post-1" class="read-more">자세히 보기 &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- 포스팅 카드 2 -->
-                <article class="blog-card">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="출장마사지 후불제 안심 이용" class="blog-thumb">
-                        <div class="blog-body">
-                            <div>
-                                <div class="blog-meta">
-                                    <span>이용 꿀팁</span>
-                                    <span class="blog-date">2026.05.28</span>
-                                </div>
-                                <h3>출장마사지 이용 시 '100% 후불제'가 절대적으로 안전한 이유</h3>
-                                <p>선입금 사기 피해를 예방하고 안심하고 서비스를 이용하실 수 있는 후불제 시스템의 핵심 원칙과 올바른 예약 업소 선택 가이드.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 25px 25px 25px;">
-                        <a href="post-2" class="read-more">자세히 보기 &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- 포스팅 카드 3 -->
-                <article class="blog-card">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="홈타이 마사지 장소 추천" class="blog-thumb">
-                        <div class="blog-body">
-                            <div>
-                                <div class="blog-meta">
-                                    <span>홈케어 라이프</span>
-                                    <span class="blog-date">2026.05.15</span>
-                                </div>
-                                <h3>내 방이 곧 럭셔리 스파! 홈타이 및 방문 마사지의 모든 것</h3>
-                                <p>이동 시간 없이 자택이나 호텔 등 개인 공간에서 누리는 프라이빗 방문 테라피의 장점과 최적의 힐링 환경 조성 팁을 공유해 드립니다.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 25px 25px 25px;">
-                        <a href="post-3" class="read-more">자세히 보기 &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- 💡 [안내] 나중에 새로운 글을 추가하실 때 아래 <article class="blog-card"> 구문을 복사해서 위에 추가하시면 됩니다! -->
-
+            <h1>프리미엄 웰니스 & <span>마사지 매거진</span></h1>
+            <p>현대인의 만성피로 해소법, 스웨디시 및 아로마의 과학적 효과, 그리고 안전한 100% 후불제 방문 홈케어 이용 팁까지 지금출장마사지가 전하는 깊이 있는 건강 칼럼입니다.</p>
+            
+            <div class="category-tabs">
+                <button class="tab-btn active">전체 보기</button>
+                <button class="tab-btn">테라피 가이드</button>
+                <button class="tab-btn">이용 꿀팁 & 안전</button>
+                <button class="tab-btn">홈케어 라이프</button>
+                <button class="tab-btn">웰니스 과학</button>
             </div>
         </div>
     </section>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="container">
+
+        <!-- 에디터 추천 피처드 포스트 -->
+        <article class="featured-post-card">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=80" alt="스웨디시 테라피의 비밀" class="featured-thumb">
+            <div class="featured-body">
+                <div>
+                    <span class="badge-featured">EDITOR'S PICK · 에디터 추천 칼럼</span>
+                    <h2>스웨디시 테라피란? 부드러운 림프 순환과 스트레스 해소의 비밀</h2>
+                    <p>자극적인 강압 마사지와는 다른 유럽 전통 스웨디시 테라피의 생리학적 메커니즘. 따뜻한 아로마 오일과 부드러운 스트로킹이 부교감신경을 활성화하고 체내 노폐물을 배출하는 원리를 상세히 해설합니다.</p>
+                </div>
+                <div>
+                    <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 12px;">작성일: 2026.06.01 · 조회수: 1,420</span>
+                    <a href="/post-1" class="read-more">칼럼 전체 전문 읽기 &rarr;</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 블로그 포스팅 그리드 -->
+        <div class="blog-grid">
+            
+            <!-- 포스팅 카드 1 -->
+            <article class="blog-card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80" alt="출장마사지 후불제 안심 시스템" class="blog-thumb">
+                    <div class="blog-body">
+                        <div>
+                            <div class="blog-meta">
+                                <span>이용 꿀팁 & 안전</span>
+                                <span class="blog-date">2026.05.28</span>
+                            </div>
+                            <h3>출장마사지 이용 시 '100% 후불제'가 절대적으로 안전한 이유</h3>
+                            <p>선입금 및 예약금 사기 피해를 원천 차단하고, 안심하고 프라이빗 방문 서비스를 누릴 수 있는 후불제 시스템의 핵심 원칙을 확인하세요.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 0 30px 30px 30px;">
+                    <a href="/post-2" class="read-more">자세히 보기 &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 포스팅 카드 2 -->
+            <article class="blog-card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="홈타이 마사지 장소 추천" class="blog-thumb">
+                    <div class="blog-body">
+                        <div>
+                            <div class="blog-meta">
+                                <span>홈케어 라이프</span>
+                                <span class="blog-date">2026.05.15</span>
+                            </div>
+                            <h3>내 방이 곧 럭셔리 스파! 홈타이 및 방문 마사지의 모든 것</h3>
+                            <p>이동 시간 없이 자택, 오피스텔, 호텔 등 개인 공간에서 누리는 프라이빗 방문 테라피의 장점과 최적의 힐링 환경 조성 팁.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 0 30px 30px 30px;">
+                    <a href="/post-3" class="read-more">자세히 보기 &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 포스팅 카드 3 -->
+            <article class="blog-card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80" alt="직장인 만성피로와 림프 순환" class="blog-thumb">
+                    <div class="blog-body">
+                        <div>
+                            <div class="blog-meta">
+                                <span>웰니스 과학</span>
+                                <span class="blog-date">2026.04.20</span>
+                            </div>
+                            <h3>장시간 모니터 앞에 앉은 직장인을 위한 목·어깨 근막 이완법</h3>
+                            <p>거북목 증후군과 굳은 승모근을 부드럽게 풀어주는 홈케어 스트레칭 루틴과 정기적인 스웨디시 케어의 시너지 효과.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 0 30px 30px 30px;">
+                    <a href="/post-4" class="read-more">자세히 보기 &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 포스팅 카드 4 -->
+            <article class="blog-card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="아로마 오일 종류별 효능" class="blog-thumb">
+                    <div class="blog-body">
+                        <div>
+                            <div class="blog-meta">
+                                <span>테라피 가이드</span>
+                                <span class="blog-date">2026.04.10</span>
+                            </div>
+                            <h3>라벤더부터 유칼립투스까지, 아로마 오일 종류별 심신 안정 효과</h3>
+                            <p>개인의 컨디션과 수면 패턴에 따라 선택하는 프리미엄 천연 아로마 오일의 특징과 테라피 극대화 가이드.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 0 30px 30px 30px;">
+                    <a href="/post-5" class="read-more">자세히 보기 &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 포스팅 카드 5 (이미지 교체 완료) -->
+            <article class="blog-card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80" alt="불면증과 숙면 유도 케어" class="blog-thumb">
+                    <div class="blog-body">
+                        <div>
+                            <div class="blog-meta">
+                                <span>홈케어 라이프</span>
+                                <span class="blog-date">2026.03.25</span>
+                            </div>
+                            <h3>잠 못 드는 밤을 위한 힐링 솔루션: 방문 테라피와 숙면의 상관관계</h3>
+                            <p>늦은 밤 귀가 후 번거로운 이동 없이 집에서 바로 딥슬립으로 이어지는 프리미엄 홈타이의 수면의 질 개선 효과.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 0 30px 30px 30px;">
+                    <a href="/post-6" class="read-more">자세히 보기 &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 포스팅 카드 6 -->
+            <article class="blog-card">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="건전하고 안전한 마사지 업소 선택" class="blog-thumb">
+                    <div class="blog-body">
+                        <div>
+                            <div class="blog-meta">
+                                <span>이용 꿀팁 & 안전</span>
+                                <span class="blog-date">2026.03.12</span>
+                            </div>
+                            <h3>실패 없는 출장마사지 예약 요령: 투명한 정보와 검증된 관리사</h3>
+                            <p>방문 서비스 이용 전 반드시 확인해야 할 자격 수료 여부, 위생 용품 지참 규칙, 그리고 실시간 응대 시스템 체크포인트.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 0 30px 30px 30px;">
+                    <a href="/post-7" class="read-more">자세히 보기 &rarr;</a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- 웰니스 전문성 백서 요약 박스 -->
+        <div class="info-highlight-box">
+            <h3>🔬 지금출장마사지 매거진의 편집 원칙과 웰니스 약속</h3>
+            <p>당사의 모든 매거진 칼럼과 힐링 가이드는 현대 해부학, 생리학, 그리고 전문 테라피스트들의 현장 실무 노하우를 바탕으로 엄격한 검증을 거쳐 작성됩니다. 단순한 흥미 위주의 정보가 아닌, 바쁜 일상을 살아가는 현대인들에게 진정한 피로 회복과 건강한 라이프스타일을 제시하는 신뢰할 수 있는 지식 콘텐츠를 지향합니다.</p>
+            <p>선입금 없는 <strong>100% 후불제 안심 시스템</strong>과 전국 167개 주요 거점 도시 <strong>30분 신속 배차 네트워크</strong>를 바탕으로, 언제 어디서나 가장 안전하고 쾌적한 힐링을 만나보세요.</p>
+            <div style="margin-top: 25px;">
+                <a href="tel:010-2753-2759" target="_blank" class="btn-tg">⚡ 실시간 빠른 예약 및 매거진 문의</a>
+            </div>
+        </div>
+
+    </main>
 
     <!-- 푸터 영역 -->
     <footer>
-        <div class="container">
-            <div class="footer-nav">
-                <a href="about">브랜드소개</a> |
-                <a href="pricing">코스 & 가격</a> |
-                <a href="index#regions">지역별 안내</a> |
-                <a href="portfolio-overview">리얼후기</a> |
-                <a href="faq">자주묻는질문</a> |
-                <a href="blog-home">마사지 매거진</a> |
-                <a href="contact">제휴문의</a> |
-                <a href="sitemap"><strong>사이트맵 (Sitemap)</strong></a>
+        <div class="footer-menu-row">
+            <a href="/">홈</a>
+            <a href="/about">브랜드소개</a>
+            <a href="/pricing">코스 & 가격</a>
+            <a href="/portfolio-overview">리얼후기</a>
+            <a href="/faq">자주묻는질문</a>
+            <a href="/blog-home">매거진</a>
+            <a href="/sitemap">사이트맵</a>
+        </div>
+
+        <div class="footer-regions-container">
+            <!-- 수도권 영역 -->
+            <div class="footer-regions-group">
+                <h4>수도권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/seoul">서울</a>
+                    <a href="/gangnam">강남</a>
+                    <a href="/mapo">마포</a>
+                    <a href="/songpa">송파</a>
+                    <a href="/jongno">종로</a>
+                    <a href="/suwon">수원</a>
+                    <a href="/bucheon">부천</a>
+                    <a href="/incheon">인천</a>
+                    <a href="/goyang">고양</a>
+                    <a href="/ansan">안산</a>
+                    <a href="/hwaseong">화성</a>
+                    <a href="/pyeongtaek">평택</a>
+                    <a href="/yongin">용인</a>
+                    <a href="/seongnam">성남</a>
+                    <a href="/hanam">하남</a>
+                    <a href="/anyang">안양</a>
+                    <a href="/siheung">시흥</a>
+                    <a href="/paju">파주</a>
+                    <a href="/uijeongbu">의정부</a>
+                    <a href="/gwangmyeong">광명</a>
+                    <a href="/osan">오산</a>
+                    <a href="/gunpo">군포</a>
+                    <a href="/gwacheon">과천</a>
+                    <a href="/gimpo">김포</a>
+                    <a href="/ilsan">일산</a>
+                    <a href="/dongducheon">동두천</a>
+                    <a href="/guri">구리</a>
+                    <a href="/yangju">양주</a>
+                    <a href="/namyangju">남양주</a>
+                    <a href="/pocheon">포천</a>
+                    <a href="/uiwang">의왕</a>
+                    <a href="/icheon">이천</a>
+                    <a href="/anseong">안성</a>
+                    <a href="/yeoncheon">연천</a>
+                    <a href="/yangpyeong">양평</a>
+                    <a href="/yeoju">여주</a>
+                    <a href="/gapyeong">가평</a>
+                    <a href="/bundang">분당</a>
+                    <a href="/dongtan">동탄</a>
+                    <a href="/gyeonggigwangju">경기광주</a>
+                    <a href="/ganghwa">강화</a>
+                    <a href="/ongjin">옹진</a>
+                </div>
             </div>
-            <div class="footer-info">
-                <p><strong>지금출장마사지</strong> | 24시간 방문 출장 서비스</p>
-                <p>본 사이트는 100% 후불제로 운영되며 선입금을 절대 요구하지 않습니다.</p>
-                <p style="margin-top:10px; color:#64748b;">© 2026 지금출장마사지. All rights reserved.</p>
+
+            <!-- 충청권 영역 -->
+            <div class="footer-regions-group">
+                <h4>충청권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/cheonan">천안</a>
+                    <a href="/daejeon">대전</a>
+                    <a href="/cheongju">청주</a>
+                    <a href="/sejong">세종</a>
+                    <a href="/chungju">충주</a>
+                    <a href="/jecheon">제천</a>
+                    <a href="/gongju">공주</a>
+                    <a href="/boryeong">보령</a>
+                    <a href="/asan">아산</a>
+                    <a href="/seosan">서산</a>
+                    <a href="/nonsan">논산</a>
+                    <a href="/gyeryong">계룡</a>
+                    <a href="/dangjin">당진</a>
+                    <a href="/hongseong">홍성</a>
+                    <a href="/yeongdong">영동</a>
+                    <a href="/jeungpyeong">증평</a>
+                    <a href="/jincheon">진천</a>
+                    <a href="/eumseong">음성</a>
+                    <a href="/boeun">보은</a>
+                    <a href="/okcheon">옥천</a>
+                    <a href="/goesan">괴산</a>
+                    <a href="/danyang">단양</a>
+                    <a href="/buyeo">부여</a>
+                    <a href="/yesan">예산</a>
+                    <a href="/taean">태안</a>
+                    <a href="/seocheon">서천</a>
+                    <a href="/geumsan">금산</a>
+                    <a href="/cheongyang">청양</a>
+                </div>
             </div>
+
+            <!-- 강원권 영역 -->
+            <div class="footer-regions-group">
+                <h4>강원권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/chuncheon">춘천</a>
+                    <a href="/wonju">원주</a>
+                    <a href="/gangneung">강릉</a>
+                    <a href="/donghae">동해</a>
+                    <a href="/taebaek">태백</a>
+                    <a href="/sokcho">속초</a>
+                    <a href="/samcheok">삼척</a>
+                    <a href="/yangyang">양양</a>
+                    <a href="/hongcheon">홍천</a>
+                    <a href="/hoengseong">횡성</a>
+                    <a href="/yeongwol">영월</a>
+                    <a href="/pyeongchang">평창</a>
+                    <a href="/jeongseon">정선</a>
+                    <a href="/cheorwon">철원</a>
+                    <a href="/hwacheon">화천</a>
+                    <a href="/yanggu">양구</a>
+                    <a href="/inje">인제</a>
+                    <a href="/goseong">고성</a>
+                </div>
+            </div>
+
+            <!-- 전라권 영역 -->
+            <div class="footer-regions-group">
+                <h4>전라권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/gwangju">광주</a>
+                    <a href="/jeonju">전주</a>
+                    <a href="/iksan">익산</a>
+                    <a href="/gunsan">군산</a>
+                    <a href="/jeongeup">정읍</a>
+                    <a href="/gimje">김제</a>
+                    <a href="/namwon">남원</a>
+                    <a href="/mokpo">목포</a>
+                    <a href="/yeosu">여수</a>
+                    <a href="/suncheon">순천</a>
+                    <a href="/naju">나주</a>
+                    <a href="/gwangyang">광양</a>
+                    <a href="/damyang">담양</a>
+                    <a href="/hwasun">화순</a>
+                    <a href="/boseong">보성</a>
+                    <a href="/jangheung">장흥</a>
+                    <a href="/haenam">해남</a>
+                    <a href="/yeongam">영암</a>
+                    <a href="/muan">무안</a>
+                    <a href="/gochang">고창</a>
+                    <a href="/gokseong">곡성</a>
+                    <a href="/wando">완도</a>
+                    <a href="/sinan">신안</a>
+                    <a href="/buan">부안</a>
+                    <a href="/wanju">완주</a>
+                    <a href="/jinan">진안</a>
+                    <a href="/muju">무주</a>
+                    <a href="/jangsu">장수</a>
+                    <a href="/imsil">임실</a>
+                    <a href="/sunchang">순창</a>
+                    <a href="/gurye">구례</a>
+                    <a href="/goheung">고흥</a>
+                    <a href="/gangjin">강진</a>
+                    <a href="/hampyeong">함평</a>
+                    <a href="/yeonggwang">영광</a>
+                    <a href="/jangseong">장성</a>
+                    <a href="/jindo">진도</a>
+                </div>
+            </div>
+
+            <!-- 경상권 영역 -->
+            <div class="footer-regions-group">
+                <h4>경상권 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/busan">부산</a>
+                    <a href="/daegu">대구</a>
+                    <a href="/ulsan">울산</a>
+                    <a href="/pohang">포항</a>
+                    <a href="/gyeongju">경주</a>
+                    <a href="/gimcheon">김천</a>
+                    <a href="/andong">안동</a>
+                    <a href="/gumi">구미</a>
+                    <a href="/yeongju">영주</a>
+                    <a href="/yeongcheon">영천</a>
+                    <a href="/sangju">상주</a>
+                    <a href="/mungyeong">문경</a>
+                    <a href="/gyeongsan">경산</a>
+                    <a href="/changwon">창원</a>
+                    <a href="/gimhae">김해</a>
+                    <a href="/jinju">진주</a>
+                    <a href="/yangsan">양산</a>
+                    <a href="/geoje">거제</a>
+                    <a href="/tongyeong">통영</a>
+                    <a href="/sacheon">사천</a>
+                    <a href="/miryang">밀양</a>
+                    <a href="/namhae">남해</a>
+                    <a href="/hadong">하동</a>
+                    <a href="/sancheong">산청</a>
+                    <a href="/hamyang">함양</a>
+                    <a href="/geochang">거창</a>
+                    <a href="/hapcheon">합천</a>
+                    <a href="/haman">함안</a>
+                    <a href="/uiryeong">의령</a>
+                    <a href="/changnyeong">창녕</a>
+                    <a href="/goseong-gn">고성(경남)</a>
+                    <a href="/gunwi">군위</a>
+                    <a href="/uiseong">의성</a>
+                    <a href="/cheongsong">청송</a>
+                    <a href="/yeongyang">영양</a>
+                    <a href="/yeongdeok">영덕</a>
+                    <a href="/cheongdo">청도</a>
+                    <a href="/goryeong">고령</a>
+                    <a href="/seongju">성주</a>
+                    <a href="/chilgok">칠곡</a>
+                    <a href="/yecheon">예천</a>
+                    <a href="/bonghwa">봉화</a>
+                    <a href="/uljin">울진</a>
+                    <a href="/ulleung">울릉</a>
+                </div>
+            </div>
+
+            <!-- 제주권 영역 -->
+            <div class="footer-regions-group">
+                <h4>제주특별자치도 서비스 지역</h4>
+                <div class="regions-tag-list">
+                    <a href="/jeju">제주</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p><strong>지금출장마사지</strong> | 24시간 방문 출장 서비스</p>
+            <p>본 사이트는 100% 후불제로 운영되며 선입금을 절대 요구하지 않습니다.</p>
+            <p style="margin-top:10px; color:#4b5563;">© 2026 지금출장마사지. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- 모바일 하단 스티키 예약 CTA 바 -->
+    <!-- 모바일 스티키 CTA 바 -->
     <div class="mobile-sticky-cta">
-        <a href="https://t.me/koreaseo" target="_blank" class="mobile-cta-btn tg">
-            ✈️ 텔레그램 실시간 예약 / 문의
+        <a href="tel:010-2753-2759" target="_blank" class="mobile-action-btn">
+            ⚡ 24시 실시간 빠른예약 연결하기
         </a>
     </div>
 
